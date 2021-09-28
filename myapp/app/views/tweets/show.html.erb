@@ -1,0 +1,18 @@
+<p>
+    <strong>メッセージ： </strong>
+    <%= @tweet.message %>
+</p>
+<p>
+    <strong>発信時刻： </strong>
+    <%= @tweet.tdate %>
+</p>
+<p>
+    <strong>経過時間： </strong>
+    <%
+        pt = Time.now - @tweet.tdate
+        ptm = pt / 60
+        ptm_int = ptm.round
+    %>
+    <%= ptm_int %> 分経過
+</p>
+<%= link_to '戻る', :back %>
